@@ -1,0 +1,99 @@
+.ReactModal__Content--after-open{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 16px !important ;
+}
+.notes-date-character{
+    margin-top:20px;
+}
+.popup-notes-card{
+    background-color: var(--notes-bg-color);
+    height: 100vh;
+    border-radius:16px;
+}
+.popup-close-btn{
+    font-size:30px;
+    font-weight:700;
+    color:var(--notes-header-color);
+    cursor:pointer;
+}
+.save-icon{
+    color:var(--notes-bg-color)!important;
+}
+
+.notes-title-input-cover{
+    font-size: 20px;
+    color:var(--notes-header-color);
+}
+.notes-input-box{
+    margin-top:15px;
+}
+
+.modal-body{
+    overflow: auto !important;
+}
+textarea{
+    font-size: 16px;
+    padding: 30px;
+    border: 0.5px solid #1a73e8;
+    width: 100%;
+    border-radius: 16px;
+    outline: none;
+    min-height:500px;
+}
+.edit-icon{
+    color:var(--notes-bg-color);
+    font-size:25px;
+}
+.notes-save-icon-cover{
+    cursor: pointer;
+    padding: 10px;
+}
+.search-btn-cover{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 35px;
+    border: 1px solid #dadce0;
+    color:var(--notes-header-color);
+    cursor:pointer;
+}
+@media (max-width:500px){
+    .search-btn-cover{
+        border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    }
+}
+@media (max-width:800px){
+    .notes-title-input-cover{
+        font-size:20px
+    }
+    .notes-date-character h6{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:400px){
+
+    .notes-title-input-cover{
+        font-size:17px
+    }
+    .notes-save-icon-cover{
+        border-radius: 8px;
+    background-color: lightgray;
+    }
+    .notes-date-character h6{
+        font-size: 13px;
+    }
+
+    textarea{
+        padding:10px;
+        font-size:15px;
+        min-height:350px;
+    }
+}

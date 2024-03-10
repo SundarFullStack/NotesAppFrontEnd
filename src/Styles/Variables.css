@@ -1,0 +1,14 @@
+#root{
+    --notes-bg-color:#1a73e8;
+    --notes-header-color: #424242;
+    --notes-button-bg-color: #1a73e8;
+    --notes-button-text-color: #fff;
+    --notes-button-white-text-color: #1a73e8;
+    --notes-link-hover-color: #1a73e8;
+    --notes-card-bg-color: #fff;
+    --notes-border-color: #dadce0;
+    --notes-product-card-bg-color: #f8f9fa;
+    -notes-product-card-hover-color: #d2e3fc;
+    --notes-box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --notes-icon-shadow:rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}

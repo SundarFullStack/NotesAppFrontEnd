@@ -1,0 +1,22 @@
+
+.footer-content-container{
+    background-color:var(--notes-header-color);
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer-content-dialogue{
+    padding: 20px;
+    width: 1000px;
+    margin: 20px auto 0px auto;
+    color: #fff;
+}
+
+.footer-content-dialogue span{
+
+    color:var(--notes-button-white-text-color);
+
+}

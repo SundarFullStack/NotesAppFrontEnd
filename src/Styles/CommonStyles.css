@@ -1,0 +1,27 @@
+
+.custom-center{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cursor{
+    cursor:pointer;
+}
+
+.date-vertical-line{
+    border-radius: 20px;
+    margin: 9px 10px 20px 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: gray;
+    width: 2px;
+    height: 29px;
+}
+@media (max-width:500px){
+    .custom-center{
+        margin-top:10px
+    }
+}
+
