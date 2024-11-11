@@ -1,3 +1,3 @@
-const API_URL = "http://localhost:4050";
+const API_URL = "https://notesbackend-9rnl.onrender.com";
 
 export default API_URL;
