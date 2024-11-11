@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./dashboard.css";
 
 import { useNavigate } from "react-router-dom";
@@ -39,27 +39,31 @@ const Dashboard = () => {
 
   return (
     <>
-        <div className="dash-container-cover custom-center">
+      <div className="dash-container-cover custom-center">
         <div className="dash-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div className="row">
             <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-              <p className="content-header custom-center"> If You Aren't Taking Notes, You Aren't Learning</p>
-              <p className="content">- If you want to identify the most senior, knowledgeable
-                    people in an group, look for the person who are taking notes
-                and asking questions..</p>
-                <div className="getStarted-btn-cover">
-                  <button className="getStarted-btn" onClick={handleGetStarted}>
-                    Get Started
+              <p className="content-header custom-center">
+                {" "}
+                If you can't explain it simply, you don't understand it well
+                enough
+              </p>
+              <p className="content">
+                - A blog, short for weblog, is a frequently updated web page
+                used for personal commentary or business content.
+              </p>
+              <div className="getStarted-btn-cover">
+                <button className="getStarted-btn" onClick={handleGetStarted}>
+                  Get Started
                 </button>
-                </div>
+              </div>
             </div>
-            
+
             <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
               <ImageChanger images={images} className="dash-picture" />
             </div>
-            </div>
-  
-      </div>
+          </div>
+        </div>
       </div>
     </>
   );

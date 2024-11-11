@@ -19,6 +19,10 @@ const CreateNotes = () => {
   const [textareaValue, setTextareaValue] = useState("");
   const { userId, setUserId } = useContext(LoginContext);
   const [title, setTitle] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+
+  //  console.log(selectedImage);
 
   // Function for handling changes happens in textareaValue
 
@@ -52,7 +56,7 @@ const CreateNotes = () => {
       } else if (!title) {
         alert("Please add any title to your notes");
       } else {
-        const response = await axios.post(`${API_URL}/notes/createNote`, {
+        const response = await axios.post(`${API_URL}/notes/createBlog`, {
           id: userId,
           notesTitle: title,
           notesData: textareaValue,
@@ -60,6 +64,7 @@ const CreateNotes = () => {
 
         if (response.status == 200) {
           alert(response.data.message);
+          // console.log(response.data);
           handleClear();
         }
       }
@@ -67,6 +72,17 @@ const CreateNotes = () => {
       // console.log("Textarea value:", textareaValue);
     } catch (error) {
       console.log("Error Occurred:", error);
+    }
+  };
+  // Handle file selection
+  const handleImageChange = async (event) => {
+    const file = event.target.files[0];
+    setPreview(URL.createObjectURL(file));
+    const base64 = await convertToBase64(file);
+    console.log(base64);
+    if (base64) {
+      setSelectedImage(file);
+      setPreview(URL.createObjectURL(file));
     }
   };
 
@@ -100,7 +116,10 @@ const CreateNotes = () => {
                     </div>
                     {/* Save Button */}
                     <div className="notes-save-icon-cover col-lg-2 col-md-2 col-sm-12 col-xs-12 custom-center">
-                      <GiCheckMark onClick={handleSubmit} className="save-icon"/>
+                      <GiCheckMark
+                        onClick={handleSubmit}
+                        className="save-icon"
+                      />
                     </div>
                   </div>
                 </div>
@@ -114,6 +133,24 @@ const CreateNotes = () => {
                     </h6>
                   </div>
                   <div className="notes-character-cover"></div>
+                </div>
+                {/* Image Uploading */}
+                <div>
+                  <h3>Upload an Image</h3>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="submit-link-cover"
+                  />
+                  {preview && (
+                    <img
+                      src={preview}
+                      alt="Selected"
+                      width="100%"
+                      className="blog-img"
+                    />
+                  )}
                 </div>
                 {/* Notes Input */}
                 <div className="notes-input-box">
@@ -133,3 +170,16 @@ const CreateNotes = () => {
 };
 
 export default CreateNotes;
+
+function convertToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.Onload = () => {
+      resolve(fileReader.result);
+    };
+    fileReader.oneerror = (error) => {
+      reject(error);
+    };
+  });
+}

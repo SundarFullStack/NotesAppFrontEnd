@@ -50,7 +50,7 @@ const Home = () => {
               <div className="row">
                 {/* Notes header name */}
                 <div className="notes-header-cover col-lg-8 col-md-8 col-sm-2 col-xs-1">
-                  <h3 className="notes-header-content">Notes</h3>
+                  <h3 className="notes-header-content">Blogs</h3>
                 </div>
 
                 {/* Create-icon-cover */}
@@ -96,8 +96,7 @@ const Home = () => {
           </div>
         </>
       ) : (
-          <>
-          
+        <>
           <div className="login-navigator-container">
             <div className="login-navigator-cover">
               <div className="row">

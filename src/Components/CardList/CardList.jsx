@@ -30,7 +30,7 @@ const CardList = ({ data }) => {
     try {
       if (id) {
         const response = await axios.delete(
-          `${API_URL}/notes/deleteNote/${id}`
+          `${API_URL}/notes/deleteBlog/${id}`
         );
 
         if (response.status == 200) {
@@ -52,7 +52,7 @@ const CardList = ({ data }) => {
   const GetNotesData = async (userId) => {
     try {
       if (userId) {
-        const response = await axios.get(`${API_URL}/notes/getNotes/${userId}`);
+        const response = await axios.get(`${API_URL}/notes/getBlogs/${userId}`);
 
         if (response.status == 200) {
           setNotesList(response.data.notesList);
@@ -110,7 +110,7 @@ const CardList = ({ data }) => {
       } else if (!title) {
         toast.error("Please add any title to your notes");
       } else {
-        const response = await axios.put(`${API_URL}/notes/updateNote`, {
+        const response = await axios.put(`${API_URL}/notes/updateBlog`, {
           id: Id,
           notesTitle: title,
           notesData: textareaValue,
@@ -143,12 +143,17 @@ const CardList = ({ data }) => {
     <>
       {/* Home notes listing */}
       {data.map((item, index) => (
-        <div className="row" style={{ marginTop: "15px" }} key={index + 1} >
+        <div
+          className="row"
+          style={{ marginTop: "15px" }}
+          key={index + 1}
+          onClick={() => handleOpenModal(item)}
+        >
           <div className="note-list-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div
-              className="note-list container text-center cursor"
+              className="note-list container text-center"
               style={{ padding: "10px" }}
-              onClick={()=>setShow(true)}
+              // onClick={()=>setShow(true)}
             >
               <div className="row justify-content-between">
                 <div className="col-lg-4 col-md-6 col-xs-12 col-sm-12">
@@ -231,7 +236,10 @@ const CardList = ({ data }) => {
                       </div>
                       {/* Update Button */}
                       <div className="notes-save-icon-cover col-lg-2 col-md-2 col-sm-12 col-xs-12 custom-center">
-                        <GiCheckMark onClick={handleUpdate} className="save-icon"/>
+                        <GiCheckMark
+                          onClick={handleUpdate}
+                          className="save-icon"
+                        />
                       </div>
                     </div>
                   </div>

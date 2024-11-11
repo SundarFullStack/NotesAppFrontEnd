@@ -1,6 +1,6 @@
 .note-list{
-    border:0.5px solid var(--notes-border-color);
-    box-shadow:var(--notes-icon-shadow);
+    border:0.5px solid var(--blogs-border-color);
+    box-shadow:var(--blogs-icon-shadow);
     border-radius:16px;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .edit-icon{
-    color:var(--notes-bg-color);
+    color:var(--blogs-bg-color);
     font-size:25px;
 }
 .delete-icon{
